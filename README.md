@@ -61,7 +61,7 @@ python rnaQUAST.py -c Trinity.fasta
 ```
 
 Some statistics are shown below.
-![Nx]([https://github.com/chensasha/TanscriptomeAssembly-Annelids/blob/main/rnaQUAST/Nx.png](https://github.com/chensasha/TanscriptomeAssembly-Annelids/blob/main/rnaQUAST/Nx_Length.png)
+![Nx](https://github.com/chensasha/TanscriptomeAssembly-Annelids/blob/main/rnaQUAST/Nx_Length.png)
 
 ## Post-processing of assembly 
 
