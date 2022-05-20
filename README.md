@@ -111,7 +111,7 @@ salmon quant -i CDHIT_clean_index -l IU -1 TRIMM_CORR_PAIR_READS_1.fastq.gz ... 
 ```
 Below are histograms representing expression distribution for *Pygospio elegans* (right) and *Arenicola marina* (left).
 
-[Salmon](https://github.com/chensasha/TanscriptomeAssembly-Annelids/blob/main/Salmon/Expression_histograms.png)
+![Salmon](https://github.com/chensasha/TanscriptomeAssembly-Annelids/blob/main/Salmon/Expression_histograms.png)
 
 We now identify candidate coding regions within transcript sequence via [TransDecoder](https://github.com/TransDecoder/TransDecoder/wiki). First, extract the long open reading frames.
 ```
@@ -152,10 +152,10 @@ awk '{if ($2>=100) { print $1, $2 }}' gene_pep_lengths > pep_res
 ```
 
 ## Results
-We assembled two transcriptomes from 12 fragments of *Pygospio elegans* and *Arenicola marina*. Boreover, two sets of protein-coding genes selected with significant expression: 54315 (*Pygospio*) and 33530 (*Arenicola*).
+We assembled two transcriptomes from 12 fragments of *Pygospio elegans* and *Arenicola marina*. Moreover, two sets of protein-coding genes selected with significant expression: 54315 (*Pygospio*) and 33530 (*Arenicola*).
 
 ## Future plans
-* Prepared data, *Pygospio elagans* and *Arenicola marina8 assemblies and sets of genes, can be further analized in order to determine gene-candidates responsible for positional information concept.
+* Prepared data, *Pygospio elagans* and *Arenicola marina* assemblies and sets of genes, can be further analized in order to determine gene-candidates responsible for positional information concept.
 
 * Moroever, there are two more samples of considered annelids available with sequnecing data. The same process can be apllied in order to validate the results.
 
