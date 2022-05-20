@@ -1,0 +1,12 @@
+METRICS/TRANSCRIPTS                                    Arenicola_Trinity        Pygospio_Trinity         
+ == BASIC TRANSCRIPTS METRICS (calculated without reference genome and gene database) == 
+Transcripts                                            355260                   910828                   
+
+Transcripts > 500 bp                                   134813                   271745                   
+Transcripts > 1000 bp                                  76015                    116185                   
+
+Average length of assembled transcripts                823.452                  593.267                  
+Longest transcript                                     30563                    30547                    
+Total length                                           292539629                540364532                
+
+Transcript N50                                         1673                     808                      

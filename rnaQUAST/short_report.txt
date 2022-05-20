@@ -1,0 +1,8 @@
+SHORT SUMMARY REPORT 
+
+METRICS/TRANSCRIPTS                                    Arenicola_Trinity        Pygospio_Trinity         
+
+ == BASIC TRANSCRIPTS METRICS == 
+Transcripts                                            355260                   910828                   
+Transcripts > 500 bp                                   134813                   271745                   
+Transcripts > 1000 bp                                  76015                    116185
