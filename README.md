@@ -37,7 +37,7 @@ The workflow of the project presented below. Each part of scheme will be discuss
 ---
 
 ## Data preparation
-[Karect][https://github.com/aminallam/karect]
+[Karect](https://github.com/aminallam/karect)
 ```
 ./karect -correct -threads=12 -matchtype=hamming -celltype=diploid -inputfile=PAIR_READS_1.fastq.gz -inputfile=PAIR_READS_2.fastq.gz
 ```
