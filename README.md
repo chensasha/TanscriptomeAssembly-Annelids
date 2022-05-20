@@ -61,8 +61,7 @@ python rnaQUAST.py -c Trinity.fasta
 ```
 
 Some statistics are shown below.
-![Nx](https://github.com/chensasha/TanscriptomeAssembly-Annelids/blob/main/rnaQUAST/Nx.png)
-![Length](https://github.com/chensasha/TanscriptomeAssembly-Annelids/blob/main/rnaQUAST/transcript_length.png)
+![Nx]([https://github.com/chensasha/TanscriptomeAssembly-Annelids/blob/main/rnaQUAST/Nx.png](https://github.com/chensasha/TanscriptomeAssembly-Annelids/blob/main/rnaQUAST/Nx_Length.png)
 
 ## Post-processing of assembly 
 
@@ -94,7 +93,7 @@ Download the ncbi taxonomy dmp.
 wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz | tar -xvf
 ```
 
-Now we can run MCSC with the parameters listed in file.ini (setting taxon to keep as 'Annelida').
+Now we can run MCSC with the parameters listed in file.ini (setting taxon to keep as '*Annelida*').
 ```
 bash MCSC_decontamination.sh file.ini
 ```
@@ -150,10 +149,10 @@ awk '{if ($2>=100) { print $1, $2 }}' gene_pep_lengths > pep_res
 ```
 
 ## Results
-We assembled two transcriptomes from 12 fragments of *Pygospio elegans* and *Arenicola marina*. Boreover, two sets of protein-coding genes selected with significant expression: 54315 (Pygospio) and 33530 (Arenicola).
+We assembled two transcriptomes from 12 fragments of *Pygospio elegans* and *Arenicola marina*. Boreover, two sets of protein-coding genes selected with significant expression: 54315 (*Pygospio*) and 33530 (*Arenicola*).
 
 ## Future plans
-* Prepared data, Pygospio elagans and Arenicola marina assemblies and sets of genes, can be further analized in order to determine gene-candidates responsible for positional information concept.
+* Prepared data, *Pygospio elagans* and *Arenicola marina8 assemblies and sets of genes, can be further analized in order to determine gene-candidates responsible for positional information concept.
 
 * Moroever, there are two more samples of considered annelids available with sequnecing data. The same process can be apllied in order to validate the results.
 
