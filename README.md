@@ -109,6 +109,9 @@ Then, we can quantify our set our reads.
 ```
 salmon quant -i CDHIT_clean_index -l IU -1 TRIMM_CORR_PAIR_READS_1.fastq.gz ... -2 TRIMM_CORR_PAIR_READS_1.fastq.gz ... --validateMappings -o CDHIT_clean_salmon_out -p 8
 ```
+Below are histograms representing expression distribution for *Pygospio elegans* (right) and *Arenicola marina* (left).
+
+[Salmon](https://github.com/chensasha/TanscriptomeAssembly-Annelids/blob/main/Salmon/Expression_histograms.png)
 
 We now identify candidate coding regions within transcript sequence via [TransDecoder](https://github.com/TransDecoder/TransDecoder/wiki). First, extract the long open reading frames.
 ```
