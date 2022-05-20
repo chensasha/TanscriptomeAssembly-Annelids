@@ -37,13 +37,14 @@ The workflow of the project presented below. Each part of scheme will be discuss
 ---
 
 ## Data preparation
+[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) revealed fails in following sections: per base sequence content, GC content, sequence duplication levels, overrepresented sequences, adapter content. Some of them are just a feature of RNA data. But low-quality and adapter sequences need to be clipped. 
+
 Error correction is done using [Karect](https://github.com/aminallam/karect).
 ```
 ./karect -correct -threads=12 -matchtype=hamming -celltype=diploid -inputfile=PAIR_READS_1.fastq.gz -inputfile=PAIR_READS_2.fastq.gz
 ```
 
-Then, low-quality and adapter sequences are clipped
-[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
+Then, low-quality and adapter sequences are clipped with [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic).
 ```
 java -jar trimmomatic-0.39.jar PE CORR_PAIR_READS_1.fastq.gz CORR_PAIR_READS_2.fastq.gz output_forward_paired.fastq.gz output_forward_unpaired.fastq.gz output_reverse_paired.fastq.gz output_reverse_unpaired.fastq.gz ILLUMINACLIP:adapters/TruSeq3-PE.fa:2:30:10:2:True SLIDINGWINDOW:5:20 LEADING:25 TRAILING:25 MINLEN:25
 ```
@@ -74,7 +75,7 @@ Then, we predict the location of ribosomal RNA genes using [barrnap](https://git
 ```
 barrnap --kingdom euk --threads 2 --outseq barrnap.fasta < CDHIT.fasta 
 ```
-NCBI search revealed contaminants like *Selenidium pygospionis*. So decontamination needs to be conducted. We're going to use [MCSC](https://github.com/Lafond-LapalmeJ/MCSC_Decontamination). 
+NCBI search revealed contaminants like *Selenidium pygospionis*. So decontamination needs to be conducted. We're going to use [MCSC](https://github.com/Lafond-LapalmeJ/MCSC_Decontamination). This method is based on hierarchical clustering algorithm and uses the [UniRef90](https://ftp.uniprot.org/pub/databases/uniprot/uniref/uniref90/) database to identify contaminant clusters.
 
 Before we can run MCSC, we need to get the uniref100 taxlist.
 ```
@@ -100,7 +101,7 @@ bash MCSC_decontamination.sh file.ini
 
 ## Qualitative analysis of gene expression
 
-Now that we have clustered decontaminated data we can analyze gene expression. We use [Salmon](https://github.com/COMBINE-lab/salmon) to produce transcript-level quantification estimates from our data. First, build an index.
+Now that we have clustered decontaminated data, we can analyze gene expression. We use [Salmon](https://github.com/COMBINE-lab/salmon) to produce transcript-level quantification estimates from our data. First, build an index.
 ```
 salmon index -t CDHIT_clean.fasta -i CDHIT_clean_index -k 31 
 ```
@@ -132,7 +133,7 @@ We can now predict the likely coding regions. The outputs generated above can be
 ## Gene selection
 We can finally select genes with significant expression. 
 
-First, we need to get a file of Trinity transcripts and corresponding genes.
+First, we need to get a file with the list of Trinity transcripts and corresponding genes.
 ```
 awk 'sub(/^>/, "")' Trinity.fasta > header.trinity # get the fasta headers
 cat header.trinity | sed 's/_i.*//' > gene.header.trinity # keep only the portion of the header representing the gene_id
