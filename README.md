@@ -12,7 +12,7 @@ The concept behind *annelids’* ability to regenerate is called a positional in
 
 ## Aim and objectives
 
-The **aim** is to assemble transcriptomes of two polychaetes - Pygospio elegans and Arenicola marina, - and to prepare data for further investigation of genes responsible for gradient expression in the body of annelids.
+The **aim** is to assemble transcriptomes of two polychaetes - *Pygospio elegans* and *Arenicola marina*, - and to prepare data for further investigation of genes responsible for gradient expression in the body of annelids.
 
 The following objectives were set in order to achive the goal:
 1.  Data preparation 
